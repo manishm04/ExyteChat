@@ -14,10 +14,15 @@ let package = Package(
             targets: ["ExyteChat"]),
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/exyte/MediaPicker.git",
-            from: "3.4.4"
-        ),
+        // Exyte's MediaPicker package uses the
+// ExyteMediaPicker package name.
+//
+// Resolve against the renamed repository URL while
+// retaining the upstream minimum compatible version.
+.package(
+    url: "https://github.com/exyte/ExyteMediaPicker.git",
+    from: "3.4.4"
+),
         .package(
            url: "https://github.com/Giphy/giphy-ios-sdk",
            exact: "2.2.16"
